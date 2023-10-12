@@ -30,40 +30,40 @@ describe Solver do
   end
 
   describe '#fizzbuzz' do
-    context 'divisible by 3' do
-      it 'should return "fizz" for 3' do
-        
-      end
-      it 'should return "fizz" for 6' do
-
-      end
+  context 'divisible by 3' do
+    it 'should return "fizz" for 3' do
+      expect(subject.fizzbuzz(3)).to eql 'fizz'
     end
-
-    context 'divisible by 5' do
-      it 'should return "buzz" for 5' do
-
-      end
-      it 'should return "buzz" for 10' do
-
-      end
-    end
-
-    context 'divisible by 3 and 5' do
-      it 'should return "fizzbuzz" for 15' do
-
-      end
-      it 'should return "fizzbuzz" for 30' do
-
-      end
-    end
-
-    context 'not divisible by 3 or 5' do
-      it 'should return "7" for 7' do
-
-      end
-      it 'should return "13" for 13' do
-
-      end
+    it 'should return "fizz" for 6' do
+      expect(subject.fizzbuzz(6)).to eql 'fizz'
     end
   end
+​
+  context 'divisible by 5' do
+    it 'should return "buzz" for 5' do
+      expect(subject.fizzbuzz(5)).to eql 'buzz'
+    end
+    it 'should return "buzz" for 10' do
+      expect(subject.fizzbuzz(10)).to eql 'buzz'
+    end
+  end
+​
+  context 'divisible by 3 and 5' do
+    it 'should return "fizzbuzz" for 15' do
+      expect(subject.fizzbuzz(15)).to eql 'fizzbuzz'
+    end
+    it 'should return "fizzbuzz" for 30' do
+      expect(subject.fizzbuzz(30)).to eql 'fizzbuzz'
+    end
+  end
+​
+  context 'not divisible by 3 or 5' do
+    it 'should return "7" for 7' do
+      expect(subject.fizzbuzz(7)).to eql '7'
+    end
+    it 'should return "13" for 13' do
+      expect(subject.fizzbuzz(13)).to eql '13'
+    end
+  end
+end
 end
