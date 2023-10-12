@@ -2,7 +2,7 @@ require_relative '../solver'
 
 describe Solver do
   describe '#factorial' do
-    before :each do
+    before :all do
       @N = Solver.new
     end
 
@@ -13,7 +13,7 @@ describe Solver do
       expect(@N.factorial(0)).to eql 1
     end
     it 'should raise an exception for a negative integer' do
-      expect(@N.factorial(-2)).to raise 'Can not calculate factorial for a negative integer'
+      expect{ @N.factorial(-2) }.to raise_error('Can not calculate facotrial for negative integer', StandardError)
     end
   end
 
