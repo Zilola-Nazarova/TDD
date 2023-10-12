@@ -1,25 +1,25 @@
 require_relative '../solver'
 
 describe Solver do
+  before :all do
+    @solve = Solver.new
+  end
+  
   describe '#factorial' do
-    before :all do
-      @num = Solver.new
-    end
-
     it 'should return factorial for a positive number' do
-      expect(@num.factorial(4)).to eql 24
+      expect(@solve.factorial(4)).to eql 24
     end
     it 'should return 1 for a number 0 (special case)' do
-      expect(@num.factorial(0)).to eql 1
+      expect(@solve.factorial(0)).to eql 1
     end
     it 'should raise an exception for a negative integer' do
-      expect { @num.factorial(-2) }.to raise_error('Can not calculate facotrial for negative integer', StandardError)
+      expect { @solve.factorial(-2) }.to raise_error('Can not calculate facotrial for negative integer', StandardError)
     end
   end
 
   describe '#reverse' do
-    it 'should return reversed string' do
-
+    it 'should return reversed string "hello" -> "olleh"' do
+      expect(@solve.reverse('hello')).to eql 'olleh'
     end
   end
 
@@ -56,7 +56,7 @@ describe Solver do
 
       end
       it 'should return "13" for 13' do
-        
+
       end
     end
   end
