@@ -2,14 +2,18 @@ require_relative '../solver'
 
 describe Solver do
   describe '#factorial' do
-    it 'should return factorial for a positive number' do
+    before :each do
+      @N = Solver.new
+    end
 
+    it 'should return factorial for a positive number' do
+      expect(@N.factorial(4)).to eql 24
     end
     it 'should return 1 for a number 0 (special case)' do
-      
+      expect(@N.factorial(0)).to eql 1
     end
     it 'should raise an exception for a negative integer' do
-      
+      expect(@N.factorial(-2)).to raise_error(NegativeNumberError)
     end
   end
 
