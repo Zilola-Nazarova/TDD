@@ -1,32 +1,38 @@
 require_relative '../solver'
 
 describe Solver do
-  before :all do
-    @solve = Solver.new
-  end
-  
   describe '#factorial' do
-    it 'should return factorial for a positive number' do
-      expect(@solve.factorial(4)).to eql 24
+    context 'positive integers' do
+      it 'should return correct factorial' do
+        expect(subject.factorial(4)).to eql 24
+      end
     end
-    it 'should return 1 for a number 0 (special case)' do
-      expect(@solve.factorial(0)).to eql 1
+
+    context 'special case 0' do
+      it 'should return 1' do
+        expect(subject.factorial(0)).to eql 1
+      end
     end
-    it 'should raise an exception for a negative integer' do
-      expect { @solve.factorial(-2) }.to raise_error('Can not calculate facotrial for negative integer', StandardError)
+
+    context 'negative integers' do
+      it 'should raise an exception' do
+        expect do
+          subject.factorial(-2)
+        end.to raise_error('Can not calculate facotrial for negative integer', StandardError)
+      end
     end
   end
 
   describe '#reverse' do
     it 'should return reversed string "hello" -> "olleh"' do
-      expect(@solve.reverse('hello')).to eql 'olleh'
+      expect(subject.reverse('hello')).to eql 'olleh'
     end
   end
 
   describe '#fizzbuzz' do
     context 'divisible by 3' do
       it 'should return "fizz" for 3' do
-
+        
       end
       it 'should return "fizz" for 6' do
 
@@ -51,7 +57,7 @@ describe Solver do
       end
     end
 
-    context 'divisible by 3 and 5' do
+    context 'not divisible by 3 or 5' do
       it 'should return "7" for 7' do
 
       end
