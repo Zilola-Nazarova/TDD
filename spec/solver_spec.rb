@@ -13,7 +13,7 @@ describe Solver do
       expect(@N.factorial(0)).to eql 1
     end
     it 'should raise an exception for a negative integer' do
-      expect(@N.factorial(-2)).to raise_error(NegativeNumberError)
+      expect(@N.factorial(-2)).to raise 'Can not calculate factorial for a negative integer'
     end
   end
 
