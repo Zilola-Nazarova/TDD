@@ -8,4 +8,8 @@ class Solver
       raise StandardError, 'Can not calculate facotrial for negative integer'
     end
   end
+
+  def reverse(word)
+    word.reverse
+  end
 end
